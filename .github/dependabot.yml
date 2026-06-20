@@ -1,20 +1,13 @@
 version: 2
 updates:
-  # GitHub Actions
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
-    groups:
-      actions:
-        patterns:
-          - "*"
-  # Python
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    groups:
-      pip:
-        patterns:
-          - "*"
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 3
+    labels:
+      - "dependencies"
+      - "javascript"
